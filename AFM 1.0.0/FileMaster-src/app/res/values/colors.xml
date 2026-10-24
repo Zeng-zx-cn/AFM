@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#2E7D32</color>
+    <color name="primary_dark">#1B5E20</color>
+    <color name="accent">#FFB300</color>
+    <color name="bg">#F5F5F5</color>
+    <color name="panel_bg">#FFFFFF</color>
+    <color name="text_main">#212121</color>
+    <color name="text_sub">#757575</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="selected_bg">#E8F5E9</color>
+    <color name="tool_bg">#EEEEEE</color>
+    <color name="panel_path_bg">#EEEEEE</color>
+    <color name="divider_v">#BBBBBB</color>
+</resources>

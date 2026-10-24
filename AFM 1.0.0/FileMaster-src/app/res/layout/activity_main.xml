@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 顶部工具栏 -->
+    <LinearLayout
+        android:id="@+id/toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/primary"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_back"
+            android:contentDescription="@string/action_back" />
+
+        <TextView
+            android:id="@+id/txt_path"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:ellipsize="middle"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_search"
+            android:contentDescription="@string/action_search" />
+    </LinearLayout>
+
+    <!-- 双面板 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/panel_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/panel_bg"
+            android:layout_margin="2dp">
+
+            <TextView
+                android:id="@+id/panel_left_path"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@color/panel_path_bg"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/text_sub"
+                android:textSize="11sp"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                android:text="/" />
+
+            <ListView
+                android:id="@+id/panel_left_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/divider"
+                android:dividerHeight="1px" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider_mid"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider_v" />
+
+        <LinearLayout
+            android:id="@+id/panel_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/panel_bg"
+            android:layout_margin="2dp">
+
+            <TextView
+                android:id="@+id/panel_right_path"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@color/panel_path_bg"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/text_sub"
+                android:textSize="11sp"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                android:text="/" />
+
+            <ListView
+                android:id="@+id/panel_right_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/divider"
+                android:dividerHeight="1px" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 底部操作栏 -->
+    <HorizontalScrollView
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/tool_bg"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+
+            <Button
+                android:id="@+id/btn_new_folder"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_new_folder" />
+
+            <Button
+                android:id="@+id/btn_copy"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_copy" />
+
+            <Button
+                android:id="@+id/btn_cut"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_cut" />
+
+            <Button
+                android:id="@+id/btn_paste"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_paste" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_delete" />
+
+            <Button
+                android:id="@+id/btn_rename"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_rename" />
+
+            <Button
+                android:id="@+id/btn_zip"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_zip" />
+
+            <Button
+                android:id="@+id/btn_unzip"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_unzip" />
+
+            <Button
+                android:id="@+id/btn_select_all"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_select_all" />
+
+            <Button
+                android:id="@+id/btn_refresh"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_refresh" />
+
+            <Button
+                android:id="@+id/btn_multi"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_multi" />
+
+            <Button
+                android:id="@+id/btn_invert"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_invert" />
+
+            <Button
+                android:id="@+id/btn_sort"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/sort_name" />
+
+            <Button
+                android:id="@+id/btn_root"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_root" />
+
+            <Button
+                android:id="@+id/btn_theme"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_theme" />
+
+            <Button
+                android:id="@+id/btn_fav"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_fav" />
+
+            <Button
+                android:id="@+id/btn_bookmark"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_bookmark" />
+
+            <Button
+                android:id="@+id/btn_ftp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_ftp" />
+
+            <Button
+                android:id="@+id/btn_cloud"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_cloud" />
+
+            <Button
+                android:id="@+id/btn_decompile"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/action_decompile" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="@color/primary_dark"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/tip_select" />
+</LinearLayout>
